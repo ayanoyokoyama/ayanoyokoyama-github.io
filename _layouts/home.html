@@ -14,13 +14,28 @@
     <a class="brand-link" href="/">{{ site.title }}</a>
     <nav class="topnav">
       <a href="/about/">About</a>
+
+      <!-- WORK dropdown (keyboard & mobile friendly) -->
+      <details class="work-menu">
+        <summary>
+          Work
+          <svg class="caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        </summary>
+        <ul>
+          <li><a href="/projects/naia/">Naia — AI-assisted fitness</a></li>
+          <!-- add more as you create them -->
+          <!-- <li><a href="/projects/easyb/">EasyB — Banking</a></li> -->
+          <!-- <li><a href="/projects/guerillabox/">GuerillaBox — Subscription</a></li> -->
+        </ul>
+      </details>
+
       <a href="mailto:{{ site.email }}">Contact</a>
     </nav>
   </header>
 
   <main>
-    <!-- Landing / hero -->
-    <section class="hero-landing wrap">
+    <!-- Big landing hero (fills 80% of viewport height) -->
+    <section class="hero-landing hero-tall wrap">
       <h1 class="hero-big">Hi, I’m a content designer.</h1>
       <p class="hero-lede">
         I focus on clear, accessible product content—UX writing, content systems, and AI-assisted workflows.
