@@ -1,5 +1,8 @@
 ---
 title: Naia — AI-assisted fitness app
+layout: page
+---
+
 ---
 
 <link rel="stylesheet" href="/style.css">
