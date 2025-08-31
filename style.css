@@ -104,3 +104,16 @@ body{
 a{color:var(--accent)}
 a:hover{text-decoration:underline}
 img{max-width:100%; height:auto; border-radius:8px}
+
+/* minimal header for project pages */
+.header--minimal{
+  padding:20px 0; display:flex; justify-content:space-between;
+  align-items:center; font-size:14px;
+}
+.mini-brand{
+  font-weight:600; font-size:14px; letter-spacing:.05em;
+  text-decoration:none; color:var(--ink);
+  opacity:.8;
+}
+.mini-brand:hover{opacity:1}
+
