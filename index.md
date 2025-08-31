@@ -12,5 +12,3 @@ hero_text: I’m Ayano, a content designer focused on clear, accessible product 
     <img class="thumb" src="/projects/naia/images/flow.png" alt="Naia case study preview">
   </a>
 </article>
-
-<!-- Add more items by duplicating the block above -->
