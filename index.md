@@ -11,7 +11,7 @@ title: Hi, I’m Ayano, Content Designer
   Selected case studies
   <div class="grid cards">
     <a class="card" href="/projects/naia/">
-      <h3>Naia — AI-assisted fitness app</h3>
+      <h3>Naia: AI-assisted fitness app</h3>
       <p>Onboarding UX writing, help center IA, tone & voice, and research-informed microcopy.</p>
       <span class="badge">UX Writing</span> <span class="badge">Content Design</span> <span class="badge">AI workflow</span>
     </a>
