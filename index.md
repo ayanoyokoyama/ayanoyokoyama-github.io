@@ -5,26 +5,34 @@ title: Hi, I’m Ayano, Content Designer
 
 <link rel="stylesheet" href="/style.css">
 
-<main>
-  <p>I craft clear, accessible UX copy and content systems. I’m transitioning from localization into Content Design, with a strong focus on AI-assisted workflows.</p>
+<div class="container" markdown="1">
 
-  Selected case studies
-  <div class="grid cards">
-    <a class="card" href="/projects/naia/">
-      <h3>Naia: AI-assisted fitness app</h3>
-      <p>Onboarding UX writing, help center IA, tone & voice, and research-informed microcopy.</p>
-      <span class="badge">UX Writing</span> <span class="badge">Content Design</span> <span class="badge">AI workflow</span>
-    </a>
-  </div>
+I craft clear, accessible UX copy and content systems. I’m transitioning from localization into Content Design, with a strong focus on AI-assisted workflows.
 
-  About
-  - 10+ years in localization. Now Content Design & UX Writing  
-  - Tools: Figma, GitHub, Markdown, Notion; AI: ChatGPT, Claude, Visily  
-  - Based in EU; open to remote / hybrid roles
+Selected case studies
+=====================
 
-  [More about me →](/about/)
-</main>
+<div class="grid cards">
+  <a class="card" href="/projects/naia/">
+    <h3>Naia — AI-assisted fitness app</h3>
+    <p>Onboarding UX writing, help center IA, tone & voice, and research-informed microcopy.</p>
+    <span class="badge">UX Writing</span>
+    <span class="badge">Content Design</span>
+    <span class="badge">AI workflow</span>
+  </a>
+</div>
+
+About
+=====
+
+- 10+ years in localization; now content design & UX writing  
+- Tools: Figma, GitHub, Markdown, Notion; AI: ChatGPT, Claude, Visily  
+- Based in EU; open to remote / hybrid roles
+
+[More about me →](/about/)
+
+</div>
 
 <footer>
-  © {{ site.time | date: "%Y" }} {{ site.title }} · <a href="mailto:ayanoyokoyama@yahoo.com">Email</a> · <a href="https://www.linkedin.com/in/ayanoyokoyama">LinkedIn</a>
+  © {{ site.time | date: "%Y" }} {{ site.title }} · <a href="mailto:{{ site.email }}">Email</a> · <a href="{{ site.linkedin }}">LinkedIn</a>
 </footer>
