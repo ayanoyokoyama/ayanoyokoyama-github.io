@@ -9,9 +9,9 @@
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-  <header class="site-header wrap">
-    <a class="brand" href="/">{{ site.title }}</a>
-    <nav class="nav">
+  <header class="wrap header--center">
+    <h1 class="brand">{{ site.title }}</h1>
+    <nav class="nav--center">
       <a href="/">Work</a>
       <a href="/about/">About</a>
       <a href="mailto:{{ site.email }}">Email</a>
@@ -19,20 +19,16 @@
   </header>
 
   <main class="wrap">
-    <section class="hero">
-      <h1 class="hero-title">{{ page.hero_title }}</h1>
+    <section class="intro">
       <p class="lede">{{ page.hero_text }}</p>
     </section>
 
-    <section class="projects">
-      <h2 class="section-title">Selected work</h2>
-      <div class="grid cards">
-        {{ content }}
-      </div>
+    <section class="list">
+      {{ content }}
     </section>
   </main>
 
-  <footer class="site-footer wrap">
+  <footer class="wrap footer--muted">
     © {{ site.time | date: "%Y" }} {{ site.title }}
   </footer>
 </body>
