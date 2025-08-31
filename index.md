@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Hi, I’m Ayano — Content Designer
+title: Hi, I’m Ayano, Content Designer
 ---
 
 <link rel="stylesheet" href="/style.css">
@@ -18,7 +18,7 @@ title: Hi, I’m Ayano — Content Designer
   </div>
 
   ### About
-  - 10+ years in localization; now content design & UX writing  
+  - 10+ years in localization. Now Content Design & UX Writing  
   - Tools: Figma, GitHub, Markdown, Notion; AI: ChatGPT, Claude, Visily  
   - Based in EU; open to remote / hybrid roles
 
