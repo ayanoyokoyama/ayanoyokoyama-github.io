@@ -8,7 +8,7 @@ title: Hi, I’m Ayano, Content Designer
 <main>
   <p>I craft clear, accessible UX copy and content systems. I’m transitioning from localization into Content Design, with a strong focus on AI-assisted workflows.</p>
 
-  ### Selected case studies
+  Selected case studies
   <div class="grid cards">
     <a class="card" href="/projects/naia/">
       <h3>Naia — AI-assisted fitness app</h3>
@@ -17,7 +17,7 @@ title: Hi, I’m Ayano, Content Designer
     </a>
   </div>
 
-  ### About
+  About
   - 10+ years in localization. Now Content Design & UX Writing  
   - Tools: Figma, GitHub, Markdown, Notion; AI: ChatGPT, Claude, Visily  
   - Based in EU; open to remote / hybrid roles
