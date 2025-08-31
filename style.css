@@ -1,24 +1,24 @@
-/* ===== design tokens ===== */
+/* ===== tokens ===== */
 :root{
   /* neutrals */
   --bg:#ffffff;
-  --ink:#101418;
-  --muted:#67707a;
+  --ink:#121417;
+  --muted:#66707a;
   --line:#e9edf2;
 
-  /* late-spring accents (pastels) */
-  --spr-mint:#c9f2e4;
-  --spr-sky:#cfe9ff;
-  --spr-lilac:#e7dcff;
-  --spr-peach:#ffe4d1;
+  /* spring pastels (very light) */
+  --spr-mint:#dff8ef;
+  --spr-sky:#e6f2ff;
+  --spr-lilac:#f0e9ff;
+  --spr-peach:#ffeedd;
 
-  /* brand accent (links, hover) */
-  --accent:#2c72ff;
+  /* accent */
+  --accent:#3a6fff;
 
-  --wrap: 900px;
+  --wrap: 920px;
   --pad: 28px;
   --radius: 12px;
-  --font:-apple-system, BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
 
 /* ===== base ===== */
@@ -28,41 +28,42 @@ body{
   font-family:var(--font);
   color:var(--ink);
   background:
-    radial-gradient(1200px 600px at 10% 0%, var(--spr-mint) 0%, transparent 50%),
-    radial-gradient(900px 540px at 95% -10%, var(--spr-sky) 0%, transparent 55%),
-    linear-gradient(#fff, #fff); /* base white */
+    radial-gradient(1200px 680px at 12% -5%, var(--spr-mint) 0%, transparent 55%),
+    radial-gradient(1200px 680px at 90% -8%, var(--spr-sky) 0%, transparent 55%),
+    linear-gradient(#fff, #fff);
   line-height:1.7;
   -webkit-font-smoothing:antialiased;
 }
 .wrap{max-width:var(--wrap); margin:0 auto; padding:0 var(--pad)}
 
-/* ===== header ===== */
-.header--center{padding:64px 0 8px; text-align:center}
-.brand{font-weight:800; letter-spacing:.02em; margin:0; font-size:38px}
-.nav--center{margin-top:16px}
-.nav--center a{
-  display:inline-block; margin:0 14px; font-size:14px;
-  color:var(--ink); text-decoration:none
-}
-.nav--center a:hover{text-decoration:underline}
+/* block dark mode completely (stay light & poppy) */
+.light-only, .light-only *{color-scheme: light}
 
-/* ===== hero ===== */
-.hero{padding:96px 0 56px; text-align:center}
-.hero-title{
-  font-size:56px; line-height:1.12; margin:0 0 14px;
-  background: linear-gradient(90deg, #111, #111);
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
+/* ===== header (big name, tiny nav) ===== */
+.header--simple{padding:72px 0 12px; text-align:center}
+.brand{
+  margin:0; font-weight:800; letter-spacing:.02em;
+  font-size:44px; line-height:1.1;
 }
+.nav--tiny{margin-top:14px}
+.nav--tiny a{
+  display:inline-block; margin:0 12px; font-size:13px; letter-spacing:.08em;
+  text-transform:uppercase; color:var(--ink); text-decoration:none; opacity:.85
+}
+.nav--tiny a:hover{opacity:1; text-decoration:underline}
+
+/* ===== intro ===== */
+.intro{padding:56px 0 24px; text-align:center}
 .lede{
-  max-width:60ch; margin:0 auto; color:var(--muted); font-size:18px;
-  background: radial-gradient(600px 180px at 50% 110%, var(--spr-peach) 0%, transparent 70%);
+  max-width:58ch; margin:0 auto; color:var(--muted); font-size:18px;
+  /* soft highlight under the text */
+  background:
+    radial-gradient(700px 180px at 50% 120%, var(--spr-peach) 0%, transparent 75%);
 }
 
-/* ===== project list ===== */
-.list{margin-top:48px; display:grid; gap:64px}
-.item{display:grid; gap:12px}
+/* ===== project list (vertical, airy) ===== */
+.list{margin-top:40px; display:grid; gap:64px}
+.item{display:grid; gap:10px}
 .item a.title{
   font-size:28px; font-weight:700; text-decoration:none; color:var(--ink)
 }
@@ -73,21 +74,20 @@ body{
 /* ===== thumbnails ===== */
 .thumb{
   width:100%; height:340px; border:1px solid var(--line); border-radius:var(--radius);
-  object-fit:cover; background:#f5f5f5;
+  object-fit:cover; background:#fafbfc;
 }
 .thumb.gradient{object-fit:cover; background:none}
 
-/* spring gradient utilities for placeholder blocks */
+/* gentle gradient utilities (use on .thumb.gradient) */
 .bg-spring-1{ background: linear-gradient(135deg, var(--spr-mint), var(--spr-sky)); }
 .bg-spring-2{ background: linear-gradient(135deg, var(--spr-lilac), var(--spr-sky)); }
 .bg-spring-3{ background: linear-gradient(135deg, var(--spr-peach), var(--spr-lilac)); }
 .bg-spring-4{ background: linear-gradient(135deg, var(--spr-mint), var(--spr-peach)); }
 
-/* ===== tags ===== */
+/* ===== tags (if you use them later) ===== */
 .tags{list-style:none; padding:0; margin:0; display:flex; flex-wrap:wrap; gap:8px}
 .tags li{
-  font-size:12px; padding:6px 10px;
-  border:1px solid var(--line); border-radius:999px;
+  font-size:12px; padding:6px 10px; border:1px solid var(--line); border-radius:999px;
   background: linear-gradient(180deg, #fff, #fafcff);
 }
 
@@ -100,26 +100,7 @@ body{
   margin-top:96px;
 }
 
-/* ===== links & hover ===== */
+/* ===== links & images ===== */
 a{color:var(--accent)}
 a:hover{text-decoration:underline}
-.card:hover{box-shadow:0 12px 36px rgba(44,114,255,.10); transform:translateY(-1px)}
-
-/* ===== images inside content ===== */
 img{max-width:100%; height:auto; border-radius:8px}
-
-/* ===== dark mode ===== */
-@media (prefers-color-scheme: dark){
-  :root{
-    --bg:#0e0f11;
-    --ink:#f3f5f7;
-    --muted:#b6bfc8;
-    --line:#28303a;
-  }
-  body{
-    background:
-      radial-gradient(1200px 600px at 10% 0%, #123a33 0%, transparent 55%),
-      radial-gradient(900px 540px at 95% -10%, #0f2f4b 0%, transparent 60%),
-      linear-gradient(#0e0f11, #0e0f11);
-  }
-}
