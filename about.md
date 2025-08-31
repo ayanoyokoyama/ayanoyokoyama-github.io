@@ -1,25 +1,24 @@
 ---
-layout: home
-title: Work
+title: About
+layout: page
 ---
 
-<article class="item">
-  <a class="title" href="/projects/naia/">Naia — AI-assisted fitness app</a>
-  <p class="desc">Onboarding microcopy, help-center IA, tone and voice, and research-informed iterations.</p>
-  <p class="meta">Role: Content Designer · Areas: UX Writing, IA, Voice & Tone</p>
-  <a href="/projects/naia/"><div class="thumb gradient bg-s1"></div></a>
-</article>
+<link rel="stylesheet" href="/style.css">
 
-<article class="item">
-  <a class="title" href="/projects/easyb/">EasyB — Banking made simple</a>
-  <p class="desc">Redesigned onboarding flow with anxiety-reducing microcopy and clearer error states.</p>
-  <p class="meta">Role: UX Writer · Areas: Onboarding, Error States, Tone</p>
-  <a href="/projects/easyb/"><div class="thumb gradient bg-s2"></div></a>
-</article>
+# About Me
 
-<article class="item">
-  <a class="title" href="/projects/guerillabox/">GuerillaBox — Subscription concept</a>
-  <p class="desc">Content style guide and UX copy for a subscription box concept with localization in mind.</p>
-  <p class="meta">Role: Content Designer · Areas: Content Strategy, Style Guide</p>
-  <a href="/projects/guerillabox/"><div class="thumb gradient bg-s3"></div></a>
-</article>
+Hi, I’m Ayano — a content designer focused on clear, accessible product content.  
+I transitioned into content design after more than 10 years in localization, bringing a deep understanding of language, clarity, and cultural nuance.
+
+### What I do
+- **UX Writing**: onboarding flows, empty/error states, microcopy that reduces friction  
+- **Content Systems**: IA, help content structure, reusable content patterns  
+- **Voice & Tone**: style guides, consistency across products  
+- **AI-assisted Workflows**: leveraging AI tools for research, content variants, and QA  
+
+### Tools I use
+Figma · Notion · GitHub · Markdown · ChatGPT · Claude · Visily
+
+### Contact
+- 📧 [ayanoyokoyama@yahoo.com](mailto:ayanoyokoyama@yahoo.com)  
+- 🔗 [LinkedIn](https://www.linkedin.com/in/ayanoyokoyama)
