@@ -1,0 +1,10 @@
+:root { --maxw: 860px; --pad: 1.25rem; }
+main { max-width: var(--maxw); margin: 0 auto; padding: var(--pad); }
+h1,h2,h3 { line-height:1.2; }
+.grid { display:grid; gap:1rem; }
+.grid.cards { grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); }
+.card { border:1px solid #e5e7eb; border-radius:12px; padding:1rem; text-decoration:none; }
+.card:hover { box-shadow:0 4px 16px rgba(0,0,0,.08);}
+.badge { font-size:.8rem; padding:.2rem .5rem; border:1px solid #ddd; border-radius:999px; }
+img { max-width:100%; height:auto; border-radius:8px; }
+footer { margin:3rem 0 2rem; font-size:.9rem; color:#666; }

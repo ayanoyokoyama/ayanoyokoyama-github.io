@@ -1,0 +1,17 @@
+title: Ayano Yokoyama — Content Designer
+description: UX writing, content design, and AI-assisted workflows.
+theme: minima
+minima:
+  skin: auto
+author:
+  name: Ayano Yokoyama
+  email: ayanoyokoyama@yahoo.com
+  linkedin: https://www.linkedin.com/in/ayanoyokoyama
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+url: https://ayanoyokoyama.github.io
+defaults:
+  - scope: {path: ""}
+    values:
+      layout: page
