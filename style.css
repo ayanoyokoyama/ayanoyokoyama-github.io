@@ -1,8 +1,25 @@
 :root{
-  --bg:#fff; --ink:#111; --muted:#666; --line:#e9e9e9;
-  --wrap: 900px; --pad: 28px; --radius: 12px;
+  /* neutrals */
+  --bg:#ffffff;
+  --ink:#101418;
+  --muted:#67707a;
+  --line:#e9edf2;
+
+  /* late-spring accents (pastels) */
+  --spr-mint:#c9f2e4;
+  --spr-sky:#cfe9ff;
+  --spr-lilac:#e7dcff;
+  --spr-peach:#ffe4d1;
+
+  /* brand accent (for links/hover) */
+  --accent:#2c72ff;
+
+  --wrap: 900px;
+  --pad: 28px;
+  --radius: 12px;
   --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
+
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 body{font-family:var(--font); color:var(--ink); background:var(--bg); line-height:1.7; -webkit-font-smoothing:antialiased}
