@@ -26,3 +26,11 @@ Process
 3. Microcopy: onboarding, empty states, error states  
 4. AI assist: generate variants; pair-review in Figma  
 5. Tests: two rounds, five users each; iterate
+## Back to Work
+[← Back to all projects](/#projects)
+
+## More Projects
+<div class="more-projects">
+  <a href="/projects/easyb/">EasyB — Banking made simple</a>
+  <a href="/projects/placeholder/">Placeholder Project</a>
+</div>
