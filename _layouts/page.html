@@ -3,33 +3,38 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{{ page.title }} · {{ site.title }}</title>
+
+  <!-- Primary Meta Tags -->
+  <title>Ayano Yokoyama · Content Designer</title>
+  <meta name="title" content="Ayano Yokoyama · Content Designer">
+  <meta name="description" content="Designing human-centered content.">
+
   {% seo %}
-<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="/assets/favicon-180.png">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-  <!-- Minimal top header -->
-  <header class="wrap header--minimal">
-    <!-- Brand (AY or full name, depending on _config.yml) -->
-    <a class="mini-brand" href="/">{{ site.shortname | default: site.title }}</a>
-    <nav class="nav--tiny">
-      <a href="/">Work</a>
+  <header class="topbar">
+    <a class="brand-link" href="/">Ayano Yokoyama</a>
+    <nav class="topnav">
       <a href="/about/">About</a>
-      <a href="mailto:{{ site.email }}">Contact</a>
+      <details class="work-menu">
+        <summary>Work <svg class="caret" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <ul>
+          <li><a href="/projects/naia/">Naia — AI-assisted fitness app</a></li>
+          <!-- add more projects here -->
+        </ul>
+      </details>
+      <a href="mailto:ayanoyokoyama@yahoo.com">Contact</a>
     </nav>
   </header>
 
-  <!-- Main project content -->
   <main class="wrap">
     {{ content }}
   </main>
 
-  <!-- Footer -->
-  <footer class="wrap footer--muted">
-    © {{ site.time | date: "%Y" }} {{ site.title }}
+  <footer class="footer--muted">
+    © {{ site.time | date: "%Y" }} Ayano Yokoyama — Content Designer
   </footer>
 </body>
 </html>
