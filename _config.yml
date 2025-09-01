@@ -20,3 +20,4 @@ url: https://ayanoyokoyama.github.io
 defaults:
   - scope: { path: "" }
     values: { layout: page }
+
