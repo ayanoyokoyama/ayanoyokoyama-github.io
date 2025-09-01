@@ -37,6 +37,57 @@ New users felt anxious and confused during sign-up. Microcopy didn’t set expec
 
 ## Back to Work
 [← Back to all projects](/#projects)
+---
+title: EasyB — Banking made simple
+layout: page
+order: 2
+summary: Redesigned onboarding flow with anxiety-reducing microcopy and clearer error states.
+---
+
+<link rel="stylesheet" href="/style.css">
+
+![cover](../naia/images/flow.png)
+
+*Placeholder case study. Replace with your content when ready.*
+
+---
+
+### Snapshot
+- **Role:** UX Writer  
+- **Type:** Personal project (2025)  
+- **Focus:** Onboarding microcopy, error states, tone & voice
+
+### Problem
+People were anxious during signup and frequently hit unclear error states.
+
+### Process
+1. Audit + usability notes  
+2. Map failure paths and surface inline help  
+3. Rewrite microcopy; clarify actions and recovery steps  
+4. Pair-review; iterate two rounds
+
+---
+
+### Back to Work
+
+<div class="btn-row">
+  <a class="btn-pill" href="/#projects"><span class="icon-left">←</span> Back to Work</a>
+  <a class="btn-pill" href="/projects/guerillabox/">Next <span class="icon-right">→</span></a>
+</div>
+
+<div class="more-work">
+  <h3>More work</h3>
+  <div class="work-grid">
+    <a class="work-card card-teal" href="/projects/naia/">
+      <p class="title">Naia — AI-assisted fitness app</p>
+      <p class="meta">Onboarding, IA, voice & tone</p>
+    </a>
+    <a class="work-card card-yellow" href="/projects/guerillabox/">
+      <p class="title">GuerillaBox — Mobile UX</p>
+      <p class="meta">Flows, IA, microcopy</p>
+    </a>
+  </div>
+</div>
 
 ## More Projects
 <div class="more-projects">
