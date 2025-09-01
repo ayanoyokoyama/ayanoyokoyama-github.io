@@ -3,47 +3,65 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{{ page.title }} · {{ site.title }}</title>
+
+  <!-- Basic meta (Jekyll SEO tag still runs below) -->
+  <title>{{ site.title }}</title>
+  <meta name="title" content="Ayano Yokoyama · Content Designer">
+  <meta name="description" content="Designing human-centered content.">
+
   {% seo %}
+
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/style.css?v=3" />
 </head>
-<body>
-  <!-- Topbar -->
+<body class="light-only">
+
+  <!-- Fixed top bar -->
   <header class="topbar">
-    <a href="/" class="brand-link">{{ site.title }}</a>
+    <a class="brand-link" href="/">{{ site.title }}</a>
     <nav class="topnav">
       <a href="/about/">About</a>
+
       <details class="work-menu">
-        <summary>Work <svg class="caret" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <summary>
+          Work
+          <svg class="caret" viewBox="0 0 10 6" aria-hidden="true">
+            <path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </summary>
         <ul>
           <li><a href="/projects/naia/">Naia — AI-assisted fitness app</a></li>
           <li><a href="/projects/easyb/">EasyB — Banking made simple</a></li>
         </ul>
       </details>
+
       <a href="mailto:ayanoyokoyama@yahoo.com">Contact</a>
     </nav>
   </header>
 
   <!-- Hero -->
-  <section class="wrap hero-landing hero-tall">
+  <main class="wrap hero-landing hero-tall">
     <h1 class="hero-big">
-      Hello, I'm <span class="gradient-text">Ayano</span>
+      <span class="hero-intro">Hello, I'm</span>
+      <span class="gradient-text">Ayano</span>
     </h1>
+
     <p class="hero-sub">Designing human-centered content.</p>
+
     <a href="#projects" class="scroll-link">
       My projects
-      <svg class="chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      <svg class="chev" viewBox="0 0 12 8" aria-hidden="true">
+        <path d="M1 1l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
     </a>
-  </section>
-
-  <!-- Projects list -->
-  <main id="projects" class="wrap projects-stack">
-    {{ content }}
   </main>
 
-  <!-- Footer -->
-  <footer class="footer--muted">
+  <!-- Content area: projects list rendered from index.md -->
+  <section id="projects" class="wrap projects-stack">
+    {{ content }}
+  </section>
+
+  <footer class="footer--muted wrap">
     © {{ site.time | date: "%Y" }} {{ site.title }}
   </footer>
 </body>
