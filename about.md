@@ -1,6 +1,7 @@
 ---
 title: About
 layout: page
+permalink: /about/
 ---
 
 <link rel="stylesheet" href="/style.css">
@@ -14,7 +15,7 @@ I transitioned into content design after more than 10 years in localization, bri
 - **UX Writing**: onboarding flows, empty/error states, microcopy that reduces friction  
 - **Content Systems**: IA, help content structure, reusable content patterns  
 - **Voice & Tone**: style guides, consistency across products  
-- **AI-assisted Workflows**: leveraging AI tools for research, content variants, and QA  
+- **AI-assisted Workflows**: research, content variants, QA
 
 ### Tools I use
 Figma · Notion · GitHub · Markdown · ChatGPT · Claude · Visily
