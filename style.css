@@ -174,3 +174,20 @@ img{max-width:100%; height:auto; border-radius:8px}
   .topbar{height:56px}
   body{padding-top:56px}
 }
+
+/* highlight just the name inside the hero */
+.hero-big .name{
+  background: linear-gradient(90deg, #ff8a5c, #8f7cff, #3b73ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 1px 0 rgba(0,0,0,.12);
+}
+
+/* high-contrast fallback */
+@media (prefers-contrast: more){
+  .hero-big .name{
+    -webkit-text-fill-color: var(--ink);
+    background:none;
+    text-shadow:none;
+  }
+}
