@@ -3,67 +3,37 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{{ page.title }} · {{ site.title }}</title>
-  {% seo %}
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="/style.css" />
+  <title>{{ site.title }}</title>
   <meta name="title" content="Ayano Yokoyama · Content Designer">
   <meta name="description" content="Designing human-centered content.">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/style.css" />
 </head>
-<body class="light-only">
-
-  <!-- Fixed top bar -->
+<body>
   <header class="topbar">
     <a class="brand-link" href="/">{{ site.shortname | default: site.title }}</a>
     <nav class="topnav">
       <a href="/about/">About</a>
       <details class="work-menu">
-        <summary>Work <svg class="caret" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+        <summary>Work <svg class="caret" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></summary>
         <ul>
-          <li><a href="/projects/naia/">Naia — AI-assisted fitness app</a></li>
-          <!-- Add more projects as you publish them -->
+          <li><a href="/projects/naia/">Naia – AI-assisted fitness app</a></li>
+          <li><a href="/projects/easyb/">EasyB – Banking made simple</a></li>
         </ul>
       </details>
-      <a href="mailto:{{ site.author.email | default: 'ayanoyokoyama@yahoo.com' }}">Contact</a>
+      <a href="mailto:ayanoyokoyama@yahoo.com">Contact</a>
     </nav>
   </header>
 
-  <!-- HERO -->
-  <section class="hero-landing hero-tall">
-    <div class="wrap hero-center">
-      <h1 class="hero-big">
-        Hello, I’m
-        <span class="grad-name">Ayano</span>
-      </h1>
-
-      <p class="hero-sub grad-sub">
-        Designing human-centered content.
-      </p>
-
-      <a class="scroll-link" href="#projects" aria-label="Jump to projects">
-        My projects
-        <svg class="chev" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <main id="projects" class="wrap">
-    <div class="projects-stack">
-
-      <article class="item">
-        <a class="title" href="/projects/naia/">Naia — AI-assisted fitness app</a>
-        <p class="desc">Onboarding microcopy, help-center IA, tone & voice, and research-informed iterations.</p>
-        <p class="meta">Role: Content Designer · Areas: UX Writing, IA, Voice & Tone</p>
-        <img class="thumb gradient bg-s1" src="/projects/naia/images/flow.png" alt="Naia case study preview">
-      </article>
-
-      <!-- Add more <article> blocks as you add projects -->
-
-    </div>
+  <main class="wrap hero-landing hero-tall">
+    <h1 class="hero-big">Hello, I'm <span class="grad-name">Ayano</span></h1>
+    <p class="hero-sub hero-sub--narrow">Designing human-centered content.</p>
+    <a href="#projects" class="scroll-link">My projects <svg class="chev" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></a>
   </main>
+
+  <section id="projects" class="wrap projects-stack">
+    {{ content }}
+  </section>
 
   <footer class="footer--muted">
     © {{ site.time | date: "%Y" }} {{ site.title }}
