@@ -3,36 +3,59 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{{ page.title }} · {{ site.title }}</title>
-  {% seo %}
+  <title>
+    {% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}
+  </title>
+
+  <!-- Basic meta -->
+  <meta name="title" content="{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}">
+  <meta name="description" content="{{ page.description | default: site.description | default: 'Designing human-centered content.' }}">
+
+  <!-- Favicon + styles -->
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="/style.css" />
 </head>
-<body>
-  <!-- Topbar -->
+<body class="light-only">
+
+  <!-- Fixed top bar (uses shortname: AY) -->
   <header class="topbar">
-    <a href="/" class="brand-link">{{ site.title }}</a>
+    <a class="brand-link" href="/">{{ site.shortname | default: site.title }}</a>
     <nav class="topnav">
       <a href="/about/">About</a>
+
       <details class="work-menu">
-        <summary>Work <svg class="caret" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <summary>Work
+          <svg class="caret" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 10l5 5 5-5z"/>
+          </svg>
+        </summary>
         <ul>
-          <li><a href="/projects/naia/">Naia — AI-assisted fitness app</a></li>
-          <li><a href="/projects/easyb/">EasyB — Banking made simple</a></li>
+          <!-- Add / remove items as your projects grow -->
+          <li><a href="/projects/naia/">Naia – AI-assisted fitness app</a></li>
+          <li><a href="/projects/easyb/">EasyB – Banking made simple</a></li>
         </ul>
       </details>
+
       <a href="mailto:ayanoyokoyama@yahoo.com">Contact</a>
     </nav>
   </header>
 
   <!-- Page content -->
-  <main class="wrap">
+  <main class="wrap" style="padding-top:48px; padding-bottom:64px;">
+    {% unless page.hide_title %}
+      {% if page.title %}
+        <h1 style="margin:0 0 18px; font-size:40px; line-height:1.2; font-weight:800;">
+          {{ page.title }}
+        </h1>
+      {% endif %}
+    {% endunless %}
+
     {{ content }}
   </main>
 
-  <!-- Footer -->
   <footer class="footer--muted">
     © {{ site.time | date: "%Y" }} {{ site.title }}
   </footer>
+
 </body>
 </html>
