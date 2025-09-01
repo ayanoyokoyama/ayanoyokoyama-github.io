@@ -92,7 +92,7 @@ body{
   background: radial-gradient(700px 180px at 50% 120%, var(--spr-peach) 0%, transparent 75%);
 }
 
-/* scroll cta */
+/* old button version (not used anymore) */
 .scroll-cta{
   display:inline-flex; align-items:center; gap:10px;
   color:var(--ink); text-decoration:none; border:1px solid var(--line);
@@ -100,6 +100,20 @@ body{
 }
 .scroll-cta:hover{box-shadow:0 10px 24px rgba(0,0,0,.06)}
 .chev{width:18px; height:18px}
+
+/* ===== new minimal scroll link ===== */
+.scroll-link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin:22px auto 0;
+  color:var(--ink);
+  text-decoration:none;
+  font-weight:600;
+  font-size:16px;
+}
+.scroll-link:hover{ text-decoration:underline }
+.scroll-link .chev{ width:18px; height:18px }
 
 /* ===== project list ===== */
 .projects-stack{ display:grid; gap:64px; padding-bottom:72px; }
