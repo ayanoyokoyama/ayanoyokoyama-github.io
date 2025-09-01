@@ -10,7 +10,14 @@
   <meta name="description" content="Designing human-centered content.">
 
   {% seo %}
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/assets/favicon-180.png" sizes="180x180" type="image/png">
+  <link rel="icon" href="/assets/favicon-512.png" sizes="512x512" type="image/png">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
@@ -19,10 +26,9 @@
     <nav class="topnav">
       <a href="/about/">About</a>
       <details class="work-menu">
-        <summary>Work <svg class="caret" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <summary>Work <svg class="caret" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></summary>
         <ul>
           <li><a href="/projects/naia/">Naia — AI-assisted fitness app</a></li>
-          <!-- add more projects here -->
         </ul>
       </details>
       <a href="mailto:ayanoyokoyama@yahoo.com">Contact</a>
@@ -34,7 +40,7 @@
   </main>
 
   <footer class="footer--muted">
-    © {{ site.time | date: "%Y" }} Ayano Yokoyama — Content Designer
+    © {{ site.time | date: "%Y" }} Ayano Yokoyama · Content Designer
   </footer>
 </body>
 </html>
