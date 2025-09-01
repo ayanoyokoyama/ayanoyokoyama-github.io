@@ -3,8 +3,6 @@ title: Naia — AI-assisted fitness app
 layout: page
 ---
 
----
-
 <link rel="stylesheet" href="/style.css">
 
 ![Naia screens](images/flow.png)
@@ -26,21 +24,12 @@ Process
 3. Microcopy: onboarding, empty states, error states  
 4. AI assist: generate variants; pair-review in Figma  
 5. Tests: two rounds, five users each; iterate
-## Back to Work
-[← Back to all projects](/#projects)
 
-## More Projects
-<div class="more-projects">
-  <a href="/projects/easyb/">EasyB — Banking made simple</a>
-  <a href="/projects/placeholder/">Placeholder Project</a>
-</div>
 ---
 
-### Back to Work
-
 <div class="btn-row">
-  <a class="btn-pill" href="/#projects"><span class="icon-left">←</span> Back to Work</a>
-  <a class="btn-pill" href="/projects/easyb/">Next <span class="icon-right">→</span></a>
+  <a class="btn-pill" href="/projects/easyb/"><span class="icon-left">←</span> Previous</a>
+  <a class="btn-pill" href="/projects/guerillabox/">Next <span class="icon-right">→</span></a>
 </div>
 
 <div class="more-work">
