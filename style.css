@@ -89,11 +89,11 @@ body{
 /* Make "Ayano" stand out:
    Option A (gradient) with Option C fallback (solid accent) */
 .hero-big .name{
-  background: linear-gradient(90deg, #ff8a5c, #8f7cff, #3b73ff);
+  background: linear-gradient(90deg, #ff9966, #ff5e62);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 1px 0 rgba(0,0,0,.12);
 }
+
 @supports not (-webkit-background-clip: text){
   .hero-big .name{ color: var(--accent); font-weight:800; }
 }
