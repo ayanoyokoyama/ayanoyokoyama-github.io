@@ -3,59 +3,71 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>
-    {% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}
-  </title>
-
-  <!-- Basic meta -->
-  <meta name="title" content="{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}">
-  <meta name="description" content="{{ page.description | default: site.description | default: 'Designing human-centered content.' }}">
-
-  <!-- Favicon + styles -->
+  <title>{{ page.title }} · {{ site.title }}</title>
+  {% seo %}
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="/style.css" />
 </head>
-<body class="light-only">
 
-  <!-- Fixed top bar (uses shortname: AY) -->
-  <header class="topbar">
-    <a class="brand-link" href="/">{{ site.shortname | default: site.title }}</a>
-    <nav class="topnav">
-      <a href="/about/">About</a>
-
-      <details class="work-menu">
-        <summary>Work
-          <svg class="caret" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M7 10l5 5 5-5z"/>
-          </svg>
-        </summary>
-        <ul>
-          <!-- Add / remove items as your projects grow -->
-          <li><a href="/projects/naia/">Naia – AI-assisted fitness app</a></li>
-          <li><a href="/projects/easyb/">EasyB – Banking made simple</a></li>
-        </ul>
-      </details>
-
-      <a href="mailto:ayanoyokoyama@yahoo.com">Contact</a>
+<body>
+  <!-- Top bar -->
+  <header class="topbar wrap header--minimal">
+    <a class="mini-brand" href="{{ '/' | relative_url }}">AY</a>
+    <nav class="topnav nav--tiny">
+      <a href="{{ '/' | relative_url }}#projects">Work</a>
+      <a href="{{ '/about/' | relative_url }}">About</a>
+      <a href="mailto:{{ site.author.email | default: 'ayanoyokoyama@yahoo.com' }}">Contact</a>
     </nav>
   </header>
 
-  <!-- Page content -->
-  <main class="wrap" style="padding-top:48px; padding-bottom:64px;">
-    {% unless page.hide_title %}
-      {% if page.title %}
-        <h1 style="margin:0 0 18px; font-size:40px; line-height:1.2; font-weight:800;">
-          {{ page.title }}
-        </h1>
-      {% endif %}
-    {% endunless %}
-
+  <!-- Main content -->
+  <main class="wrap">
     {{ content }}
   </main>
 
-  <footer class="footer--muted">
-    © {{ site.time | date: "%Y" }} {{ site.title }}
-  </footer>
+  <!-- Project navigation (Back / Prev / Next) -->
+  {% assign all_projects = site.pages | where_exp:'p','p.path contains "projects/"' | sort: 'order' %}
+  {% assign current_index = -1 %}
+  {% for p in all_projects %}
+    {% if p.url == page.url %}{% assign current_index = forloop.index0 %}{% endif %}
+  {% endfor %}
 
+  <nav class="wrap proj-nav">
+    <a class="back-link" href="{{ '/' | relative_url }}#projects">← Back to work</a>
+
+    <div class="pager">
+      {% if current_index > 0 %}
+        {% assign prevp = all_projects | slice: current_index | first %}
+        <a class="prev" href="{{ all_projects | slice: current_index | first.url | relative_url }}">← Prev</a>
+      {% endif %}
+
+      {% if current_index >= 0 and current_index < all_projects.size | minus: 1 %}
+        {% assign next_index = current_index | plus: 1 %}
+        {% assign nextp = all_projects | slice: next_index | first %}
+        <a class="next" href="{{ nextp.url | relative_url }}">Next →</a>
+      {% endif %}
+    </div>
+  </nav>
+
+  <!-- “More projects” grid -->
+  <section class="wrap more-projects">
+    <h3>More projects</h3>
+    {% assign others = all_projects | where_exp:'p','p.url != page.url' | slice: 0, 3 %}
+    <div class="proj-grid">
+      {% for p in others %}
+        <a class="proj-card" href="{{ p.url | relative_url }}">
+          <div class="thumb gradient {% cycle 'bg-s1','bg-s2','bg-s3' %}"></div>
+          <h4 class="proj-title">{{ p.title }}</h4>
+          {% if p.summary %}
+            <p class="proj-desc">{{ p.summary }}</p>
+          {% endif %}
+        </a>
+      {% endfor %}
+    </div>
+  </section>
+
+  <footer class="wrap footer--muted">
+    © {{ site.time | date: "%Y" }} {{ site.author.name | default: "Ayano Yokoyama" }}
+  </footer>
 </body>
 </html>
