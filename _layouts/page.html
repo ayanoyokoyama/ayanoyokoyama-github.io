@@ -3,44 +3,36 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- Primary Meta Tags -->
-  <title>{{ page.title }} · Ayano Yokoyama</title>
-  <meta name="title" content="Ayano Yokoyama · Content Designer">
-  <meta name="description" content="Designing human-centered content.">
-
+  <title>{{ page.title }} · {{ site.title }}</title>
   {% seo %}
-
-  <!-- Favicons -->
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
-  <link rel="icon" href="/assets/favicon-180.png" sizes="180x180" type="image/png">
-  <link rel="icon" href="/assets/favicon-512.png" sizes="512x512" type="image/png">
-
-  <!-- Styles -->
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
+  <!-- Topbar -->
   <header class="topbar">
-    <a class="brand-link" href="/">Ayano Yokoyama</a>
+    <a href="/" class="brand-link">{{ site.title }}</a>
     <nav class="topnav">
       <a href="/about/">About</a>
       <details class="work-menu">
-        <summary>Work <svg class="caret" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></summary>
+        <summary>Work <svg class="caret" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary>
         <ul>
           <li><a href="/projects/naia/">Naia — AI-assisted fitness app</a></li>
+          <li><a href="/projects/easyb/">EasyB — Banking made simple</a></li>
         </ul>
       </details>
       <a href="mailto:ayanoyokoyama@yahoo.com">Contact</a>
     </nav>
   </header>
 
+  <!-- Page content -->
   <main class="wrap">
     {{ content }}
   </main>
 
+  <!-- Footer -->
   <footer class="footer--muted">
-    © {{ site.time | date: "%Y" }} Ayano Yokoyama · Content Designer
+    © {{ site.time | date: "%Y" }} {{ site.title }}
   </footer>
 </body>
 </html>
