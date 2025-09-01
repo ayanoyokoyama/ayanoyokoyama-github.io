@@ -88,16 +88,31 @@ body{
 .hero-big{
   margin:0 0 10px; font-size:56px; line-height:1.1; font-weight:700;
 }
+/* stronger, readable gradient */
 .hero-sub{
   font-size:32px;
-  font-weight:500;
-  background: linear-gradient(90deg, var(--spr-peach), var(--spr-lilac), var(--spr-sky));
-  -webkit-background-clip: text;
+  font-weight:600;
+  /* deeper pastels for contrast */
+  background: linear-gradient(90deg, #ff9a6a 0%, #9a7cff 50%, #3c74ff 100%);
+  -webkit-background-clip:text;
   -webkit-text-fill-color: transparent;
+  /* gentle legibility boost */
+  text-shadow: 0 1px 0 rgba(0,0,0,.18);
 }
+
 @media (max-width:640px){
   .hero-sub{font-size:22px}
 }
+
+/* accessibility fallback for users who prefer higher contrast */
+@media (prefers-contrast: more){
+  .hero-sub{
+    -webkit-text-fill-color: var(--ink);
+    background:none;
+    text-shadow:none;
+  }
+}
+
 .hero-lede{
   margin:0 auto 28px; max-width:64ch; color:var(--muted); font-size:18px;
   background: radial-gradient(700px 180px at 50% 120%, var(--spr-peach) 0%, transparent 75%);
