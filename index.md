@@ -3,18 +3,37 @@ layout: home
 title: Home
 ---
 
-<!-- The hero is provided by the home layout. Just list projects below. -->
+<!-- Projects list -->
+<ul class="projects-stack" id="projects">
 
-## Naia — AI-assisted fitness app
-Onboarding microcopy, help-center IA, tone and voice, and research-informed iterations.  
-*Role:* Content Designer · *Areas:* UX Writing, IA, Voice & Tone
+  <li class="item">
+    <a class="title" href="/projects/naia/">Naia — AI-assisted fitness app</a>
+    <p class="desc">
+      Onboarding microcopy, help-center IA, tone & voice, and research-informed iterations.
+    </p>
+    <p class="meta">
+      <strong>Role:</strong> Content Designer · <strong>Areas:</strong> UX Writing, IA, Voice & Tone
+    </p>
+  </li>
 
-[Read the case study →](/projects/naia/)
+  <li class="item">
+    <a class="title" href="/projects/easyb/">EasyB — Banking made simple</a>
+    <p class="desc">
+      Redesigned onboarding flow with anxiety-reducing microcopy and clearer error states.
+    </p>
+    <p class="meta">
+      <strong>Role:</strong> UX Writer · <strong>Areas:</strong> Onboarding, Error States, Tone
+    </p>
+  </li>
 
----
+  <li class="item">
+    <a class="title" href="/projects/guerillabox/">GuerillaBox — Logistics marketplace</a>
+    <p class="desc">
+      IA, help center content patterns, and writing system for support flows.
+    </p>
+    <p class="meta">
+      <strong>Role:</strong> Content Designer · <strong>Areas:</strong> IA, Help Center, Patterns
+    </p>
+  </li>
 
-## EasyB — Banking made simple
-Redesigned onboarding flow with anxiety-reducing microcopy and clearer error states.  
-*Role:* UX Writer · *Areas:* Onboarding, Error States, Tone
-
-[Read the case study →](/projects/easyb/)
+</ul>
