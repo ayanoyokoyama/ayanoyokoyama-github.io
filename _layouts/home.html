@@ -9,13 +9,13 @@
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body class="light-only">
-  <!-- Fixed, minimal header -->
+  <!-- Fixed minimal header -->
   <header class="topbar">
     <a class="brand-link" href="/">{{ site.title }}</a>
     <nav class="topnav">
       <a href="/about/">About</a>
 
-      <!-- WORK dropdown (keyboard & mobile friendly) -->
+      <!-- WORK dropdown -->
       <details class="work-menu">
         <summary>
           Work
@@ -23,9 +23,7 @@
         </summary>
         <ul>
           <li><a href="/projects/naia/">Naia — AI-assisted fitness</a></li>
-          <!-- add more as you create them -->
-          <!-- <li><a href="/projects/easyb/">EasyB — Banking</a></li> -->
-          <!-- <li><a href="/projects/guerillabox/">GuerillaBox — Subscription</a></li> -->
+          <!-- add more projects here as you create them -->
         </ul>
       </details>
 
@@ -34,29 +32,23 @@
   </header>
 
   <main>
-    <!-- Big landing hero (fills 80% of viewport height) -->
+    <!-- Tall landing hero -->
     <section class="hero-landing hero-tall wrap">
-     <h1 class="hero-big">
-  Hello, I’m <span class="name">Ayano</span>
-</h1>
+      <h1 class="hero-big">
+        Hello, I’m <span class="name">Ayano</span>
+      </h1>
 
+      <!-- Subline (kept separate so it never disappears) -->
+      <div class="hero-sub">I write, design, adapt, and shape with AI.</div>
 
-
-     <!-- OLD -->
-<!-- <a class="scroll-cta" href="#projects" aria-label="Scroll to projects">
-  <span>My projects</span>
-  <svg viewBox="0 0 24 24" class="chev"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-</a> -->
-
-<!-- NEW: minimal text link, centered -->
-<a class="scroll-link" href="#projects" aria-label="Scroll to projects">
-  My projects
-  <svg viewBox="0 0 24 24" class="chev"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-</a>
-
+      <!-- Minimal scroll link -->
+      <a class="scroll-link" href="#projects" aria-label="Scroll to projects">
+        My projects
+        <svg viewBox="0 0 24 24" class="chev"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+      </a>
     </section>
 
-    <!-- Projects -->
+    <!-- Projects list rendered from index.md -->
     <section id="projects" class="wrap projects-stack">
       {{ content }}
     </section>
