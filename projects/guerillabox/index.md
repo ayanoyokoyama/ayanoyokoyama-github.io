@@ -1,11 +1,31 @@
 ---
-title: GuerillaBox — Subscription concept
-layout: page
+title: GuerillaBox — [short tagline here]
+order: 2
+summary: [one-line summary about GuerillaBox project]
 ---
 
-<link rel="stylesheet" href="/style.css">
+![GuerillaBox screens](images/guerillabox-screens.png)
 
-![cover](../naia/images/flow.png)
+## Snapshot
+- **Role:** Content Designer / UX Writer  
+- **Type:** [Project type, year]  
+- **Focus:** [Your focus areas]  
 
-*Placeholder case study. Replace with your content when ready.*
+## Problem
+[Problem statement here.]
 
+## Process
+1. Research: …  
+2. Content strategy: …  
+3. Copy: …  
+
+---
+
+## Back to Work
+[← Back to all projects](/#projects)
+
+## More Projects
+<div class="more-projects">
+  <a href="/projects/naia/">Naia — AI-assisted fitness app</a>
+  <a href="/projects/easyb/">EasyB — Banking made simple</a>
+</div>
