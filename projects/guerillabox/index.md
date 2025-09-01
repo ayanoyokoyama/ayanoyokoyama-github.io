@@ -1,40 +1,32 @@
 ---
-title: GuerillaBox — [short tagline here]
-order: 2
-summary: [one-line summary about GuerillaBox project]
+title: GuerillaBox — Mobile UX
+layout: page
+order: 3
+summary: Case study on flows, IA, and microcopy for mobile UX.
 ---
 
 ![GuerillaBox screens](images/guerillabox-screens.png)
 
-## Snapshot
+Snapshot
+========
 - **Role:** Content Designer / UX Writer  
-- **Type:** [Project type, year]  
-- **Focus:** [Your focus areas]  
+- **Type:** Concept case study (2025)  
+- **Focus:** Flows, IA, microcopy  
 
-## Problem
+Problem
+-------
 [Problem statement here.]
 
-## Process
+Process
+-------
 1. Research: …  
 2. Content strategy: …  
 3. Copy: …  
 
 ---
 
-## Back to Work
-[← Back to all projects](/#projects)
-
-## More Projects
-<div class="more-projects">
-  <a href="/projects/naia/">Naia — AI-assisted fitness app</a>
-  <a href="/projects/easyb/">EasyB — Banking made simple</a>
-</div>
----
-
-### Back to Work
-
 <div class="btn-row">
-  <a class="btn-pill" href="/#projects"><span class="icon-left">←</span> Back to Work</a>
+  <a class="btn-pill" href="/projects/easyb/"><span class="icon-left">←</span> Previous</a>
   <a class="btn-pill" href="/projects/naia/">Next <span class="icon-right">→</span></a>
 </div>
 
@@ -51,4 +43,3 @@ summary: [one-line summary about GuerillaBox project]
     </a>
   </div>
 </div>
-
