@@ -1,7 +1,7 @@
 /* ===== tokens ===== */
 :root{
   --bg:#ffffff;
-  --ink:#1a1a1a; /* softer dark grey */
+  --ink:#222;             /* charcoal for non-gradient headings */
   --muted:#6b747d;
   --line:#e9edf2;
 
@@ -31,7 +31,7 @@ body{
     linear-gradient(#fff,#fff);
   line-height:1.7;
   -webkit-font-smoothing:antialiased;
-  padding-top:64px;
+  padding-top:64px; /* for fixed header */
 }
 
 .wrap{max-width:var(--wrap); margin:0 auto; padding:0 var(--pad)}
@@ -66,9 +66,7 @@ body{
 }
 .work-menu summary::-webkit-details-marker{display:none}
 .work-menu[open] summary{opacity:1}
-.work-menu .caret{
-  width:14px;height:14px;transform:translateY(1px);transition:transform .15s;
-}
+.work-menu .caret{ width:14px;height:14px; transform:translateY(1px); transition:transform .15s; }
 .work-menu[open] .caret{transform:rotate(180deg) translateY(-1px)}
 .work-menu ul{
   position:absolute; right:0; top:calc(100% + 8px); min-width:260px;
@@ -86,23 +84,26 @@ body{
 .hero-landing{ text-align:center; padding:120px 0 72px; }
 .hero-tall{ min-height:80vh; display:flex; flex-direction:column; justify-content:center; }
 .hero-big{
-  margin:0 0 10px; font-size:56px; line-height:1.1; font-weight:700;
-  color: var(--ink);
+  margin:0 0 10px; font-size:56px; line-height:1.1; font-weight:800;
 }
+.hero-intro{ color:var(--ink); margin-right:.35ch; } /* "Hello, I'm" in charcoal */
 
-/* gradient for name */
-.gradient-text {
-  background: linear-gradient(90deg, #ff7a7a, #9a7cff, #3c74ff);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color: transparent;
+/* gradient for "Ayano" — cross-browser */
+.gradient-text{
+  background: linear-gradient(90deg, #ff6a6a 0%, #a86aff 50%, #3c74ff 100%);
+  -webkit-background-clip: text;  background-clip: text;
+  -webkit-text-fill-color: transparent;  color: transparent;
   display:inline-block;
 }
 
+/* subtitle with gradient */
 .hero-sub{
-  font-size:22px;
-  font-weight:400;
-  color: var(--muted);
-  margin-top:10px;
+  font-size:20px;
+  margin:12px 0 28px;
+  font-weight:500;
+  background: linear-gradient(90deg, #ff9a6a, #9a7cff, #3c74ff);
+  -webkit-background-clip:text; background-clip:text;
+  -webkit-text-fill-color:transparent; color:transparent;
 }
 
 @media (max-width:640px){
@@ -114,15 +115,9 @@ body{
 
 /* ===== scroll link (animated) ===== */
 .scroll-link{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  margin:22px auto 0;
-  color:var(--ink);
-  text-decoration:none;
-  font-weight:600;
-  font-size:16px;
-  animation: bounce 2.2s infinite;
+  display:inline-flex; align-items:center; gap:8px;
+  margin:22px auto 0; color:var(--ink); text-decoration:none;
+  font-weight:600; font-size:16px; animation: bounce 2.2s infinite;
 }
 .scroll-link:hover{ text-decoration:underline }
 .scroll-link .chev{ width:18px; height:18px }
