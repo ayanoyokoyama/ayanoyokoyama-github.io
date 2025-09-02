@@ -1,29 +1,76 @@
 ---
 layout: default
 ---
-<article>
-  <div class="case-hero">
-    <div class="kicker">{{ page.kicker }}</div>
-    <h1 class="case-title">{{ page.title }}</h1>
-    <div class="case-meta">
-      {% for t in page.tags %}<span class="badge">{{ t }}</span>{% endfor %}
-    </div>
-    <p>{{ page.subtitle }}</p>
-  </div>
+<article class="wrap">
 
+  <!-- Case intro -->
+  <section class="case-hero" style="background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;margin:24px 0">
+    <div class="kicker">{{ page.kicker }}</div>
+    <h1 class="case-title" style="font-size:36px;margin:6px 0 10px">{{ page.title }}</h1>
+
+    <!-- tags -->
+    <div class="case-meta" style="display:flex;flex-wrap:wrap;gap:10px;margin:6px 0 2px">
+      {% if page.tags %}
+        {% for t in page.tags %}
+          <span style="display:inline-block;padding:2px 10px;border:1px solid var(--line);border-radius:999px;font-size:12px;">
+            {{ t }}
+          </span>
+        {% endfor %}
+      {% endif %}
+    </div>
+
+    {% if page.subtitle %}
+      <p class="desc" style="color:var(--muted);margin:10px 0 0">{{ page.subtitle }}</p>
+    {% endif %}
+  </section>
+
+  <!-- Hero images: horizontal scroll vs grid -->
   {% if page.hero_images == "scroll" %}
-  <div class="scroll-x">
-    {% for img in page.images %}<img src="{{ img | relative_url }}" alt="">{% endfor %}
-  </div>
+    <div class="scroll-x">
+      {% for img in page.images %}
+        <img src="{{ img | relative_url }}" alt="">
+      {% endfor %}
+    </div>
   {% else %}
-  <div class="gallery">
-    {% for img in page.images %}<img src="{{ img | relative_url }}" alt="">{% endfor %}
-  </div>
+    <div class="gallery">
+      {% for img in page.images %}
+        <img src="{{ img | relative_url }}" alt="">
+      {% endfor %}
+    </div>
   {% endif %}
 
-  <div class="section">
+  <!-- Body content from the .md file -->
+  <section class="section">
     {{ content }}
+  </section>
+
+  <!-- Bottom nav: back to Work + next project (optional) -->
+  <div class="btn-row">
+    <a class="btn-pill" href="/#work">
+      <span class="icon-left">←</span> Back to Work
+    </a>
+
+    {% if page.next_url and page.next_label %}
+    <a class="btn-pill" href="{{ page.next_url | relative_url }}">
+      Next Project <span class="icon-right">→</span>
+    </a>
+    {% endif %}
   </div>
 
-  <p class="section"><a class="btn" href="/#work">Back to work</a></p>
+  <!-- Optional: More Projects (auto-pulls from _data/projects.yml except current) -->
+  {% assign current_url = page.url | replace: '/index.html','' %}
+  <section class="more-work">
+    <h3>More projects</h3>
+    <div class="work-grid">
+      {% for p in site.data.projects %}
+        {% if p.url != current_url %}
+          <a class="work-card" href="{{ p.url | relative_url }}">
+            <div class="title">{{ p.title }}</div>
+            <p class="meta">{{ p.kicker }}{% if p.tags %} · {{ p.tags | join: ", " }}{% endif %}</p>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+
 </article>
