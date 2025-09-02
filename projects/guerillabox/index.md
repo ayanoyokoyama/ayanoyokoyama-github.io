@@ -24,22 +24,3 @@ Process
 3. Copy: …  
 
 ---
-
-<div class="btn-row">
-  <a class="btn-pill" href="/projects/easyb/"><span class="icon-left">←</span> Previous</a>
-  <a class="btn-pill" href="/projects/naia/">Next <span class="icon-right">→</span></a>
-</div>
-
-<div class="more-work">
-  <h3>More work</h3>
-  <div class="work-grid">
-    <a class="work-card card-teal" href="/projects/naia/">
-      <p class="title">Naia — AI-assisted fitness app</p>
-      <p class="meta">Onboarding, IA, voice & tone</p>
-    </a>
-    <a class="work-card card-yellow" href="/projects/easyb/">
-      <p class="title">EasyB — Banking made simple</p>
-      <p class="meta">Onboarding, error states, tone</p>
-    </a>
-  </div>
-</div>
