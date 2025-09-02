@@ -1,1 +1,35 @@
+:root{
+  --ink:#101418; --stone:#F7F6F3; --sand:#EEEAE3; --mist:#A7B2AF; --accent:#42735D;
+  --max:1100px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--stone);color:var(--ink);}
+body{font:16px/1.6 Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:var(--max);margin:auto;padding:24px}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;background:#fff;border-bottom:1px solid #eaeaea;position:sticky;top:0;z-index:10}
+.brand{font-weight:700;letter-spacing:.5px}
+.nav a{margin-left:16px}
+.hero{display:grid;grid-template-columns: 1.1fr 1fr;gap:36px;align-items:center;margin:40px 0}
+.hero h1{font-size:42px;line-height:1.2;margin:0 0 12px}
+.hero p.lead{font-size:18px;opacity:.9;margin:0}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin:40px 0}
+.card{background:#fff;border:1px solid #e8e8e8;border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;display:block;aspect-ratio:16/10;object-fit:cover}
+.card .meta{padding:14px 16px}
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;background:var(--sand);font-size:12px;margin-right:6px}
+.footer{padding:40px 0;color:#666;font-size:14px}
 
+.case-hero{background:#fff;border:1px solid #e8e8e8;border-radius:18px;padding:18px;margin:24px 0}
+.case-meta{display:flex;flex-wrap:wrap;gap:10px;margin:6px 0 2px}
+.case-meta .badge{background:#eef1ef}
+.case-title{font-size:36px;margin:6px 0 10px}
+.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
+.gallery img{width:100%;border-radius:12px;border:1px solid #e8e8e8;background:#fff}
+.scroll-x{display:flex;gap:12px;overflow-x:auto;padding-bottom:6px}
+.scroll-x img{height:520px;border-radius:18px;border:1px solid #e8e8e8;background:#fff}
+.section{margin:36px 0}
+.kicker{color:var(--accent);font-weight:600;letter-spacing:.3px;text-transform:uppercase;font-size:12px}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px}
+@media (max-width:900px){ .hero{grid-template-columns:1fr} }
