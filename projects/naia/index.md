@@ -26,22 +26,3 @@ Process
 5. Tests: two rounds, five users each; iterate
 
 ---
-
-<div class="btn-row">
-  <a class="btn-pill" href="/projects/easyb/"><span class="icon-left">←</span> Previous</a>
-  <a class="btn-pill" href="/projects/guerillabox/">Next <span class="icon-right">→</span></a>
-</div>
-
-<div class="more-work">
-  <h3>More work</h3>
-  <div class="work-grid">
-    <a class="work-card card-teal" href="/projects/easyb/">
-      <p class="title">EasyB — Banking made simple</p>
-      <p class="meta">Onboarding, error states, tone</p>
-    </a>
-    <a class="work-card card-lilac" href="/projects/guerillabox/">
-      <p class="title">GuerillaBox — Mobile UX</p>
-      <p class="meta">Flows, IA, microcopy</p>
-    </a>
-  </div>
-</div>
