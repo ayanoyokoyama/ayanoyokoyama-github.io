@@ -5,21 +5,26 @@
   <title>{{ page.title }} · {{ site.title }}</title>
   {% include head-custom.html %}
 </head>
-<body>
-  <header class="topbar container">
-    <a class="brand" href="/">{{ site.shortname }}</a>
-    <nav class="nav">
-      <a href="/about/">About</a>
-      <a href="/#work">Work</a>
-      <a href="/contact/">Contact</a>
-    </nav>
+<body class="{% if page.has_gradient %}has-gradient{% endif %}">
+  <header class="topbar">
+    <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;">
+      <!-- Brand logo on the left -->
+      <a class="brand-logo" href="/" aria-label="AY home">AY</a>
+      <!-- Navigation links on the right -->
+      <nav class="topnav">
+        <a href="/about/">About</a>
+        <a href="/#work">Work</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="container">
+  <main class="wrap">
     {{ content }}
   </main>
 
-  <footer class="container footer">© {{ "now" | date: "%Y" }} Ayano Yokoyama</footer>
+  <footer class="wrap footer--muted">
+    © {{ "now" | date: "%Y" }} Ayano Yokoyama
+  </footer>
 </body>
 </html>
-
