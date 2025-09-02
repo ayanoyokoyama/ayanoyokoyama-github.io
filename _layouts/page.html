@@ -8,66 +8,58 @@
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="/style.css" />
 </head>
-
 <body>
   <!-- Top bar -->
-  <header class="topbar wrap header--minimal">
-    <a class="mini-brand" href="{{ '/' | relative_url }}">AY</a>
-    <nav class="topnav nav--tiny">
-      <a href="{{ '/' | relative_url }}#projects">Work</a>
-      <a href="{{ '/about/' | relative_url }}">About</a>
-      <a href="mailto:{{ site.author.email | default: 'ayanoyokoyama@yahoo.com' }}">Contact</a>
+  <header class="topbar">
+    <a class="brand-link" href="/">{{ site.shortname | default: "AY" }}</a>
+    <nav class="topnav">
+      <a href="/about/">About</a>
+      <details class="work-menu">
+        <summary>Work
+          <svg class="caret" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+            <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </summary>
+        <ul>
+          <li><a href="/projects/naia/">Naia — AI-assisted fitness app</a></li>
+          <li><a href="/projects/easyb/">EasyB — Banking made simple</a></li>
+          <li><a href="/projects/guerillabox/">GuerillaBox — Mobile UX</a></li>
+        </ul>
+      </details>
+      <a href="mailto:ayanoyokoyama@yahoo.com">Contact</a>
     </nav>
   </header>
 
-  <!-- Main content -->
+  <!-- Page body -->
   <main class="wrap">
     {{ content }}
   </main>
 
-  <!-- Project navigation (Back / Prev / Next) -->
-  {% assign all_projects = site.pages | where_exp:'p','p.path contains "projects/"' | sort: 'order' %}
-  {% assign current_index = -1 %}
-  {% for p in all_projects %}
-    {% if p.url == page.url %}{% assign current_index = forloop.index0 %}{% endif %}
-  {% endfor %}
-
-  <nav class="wrap proj-nav">
-    <a class="back-link" href="{{ '/' | relative_url }}#projects">← Back to work</a>
-
-    <div class="pager">
-      {% if current_index > 0 %}
-        {% assign prevp = all_projects | slice: current_index | first %}
-        <a class="prev" href="{{ all_projects | slice: current_index | first.url | relative_url }}">← Prev</a>
-      {% endif %}
-
-      {% if current_index >= 0 and current_index < all_projects.size | minus: 1 %}
-        {% assign next_index = current_index | plus: 1 %}
-        {% assign nextp = all_projects | slice: next_index | first %}
-        <a class="next" href="{{ nextp.url | relative_url }}">Next →</a>
-      {% endif %}
-    </div>
-  </nav>
-
-  <!-- “More projects” grid -->
-  <section class="wrap more-projects">
-    <h3>More projects</h3>
-    {% assign others = all_projects | where_exp:'p','p.url != page.url' | slice: 0, 3 %}
-    <div class="proj-grid">
-      {% for p in others %}
-        <a class="proj-card" href="{{ p.url | relative_url }}">
-          <div class="thumb gradient {% cycle 'bg-s1','bg-s2','bg-s3' %}"></div>
-          <h4 class="proj-title">{{ p.title }}</h4>
-          {% if p.summary %}
-            <p class="proj-desc">{{ p.summary }}</p>
+  <!-- Auto “More work” grid on project pages only (no prev/next) -->
+  {% assign is_project = page.url contains '/projects/' %}
+  {% if is_project %}
+    <section class="more-work wrap" style="margin-top:28px">
+      <h3>More work</h3>
+      <div class="work-grid">
+        {% comment %}
+          Collect all project pages, sort by `order`, and skip the current page.
+          Make sure each project page has `order:` and `summary:` in its front matter.
+        {% endcomment %}
+        {% assign cards = site.pages | where_exp: 'p', 'p.url contains "/projects/"' | sort: 'order' %}
+        {% for p in cards %}
+          {% if p.url != page.url %}
+            <a class="work-card {% cycle 'card-teal','card-yellow','card-lilac' %}" href="{{ p.url }}">
+              <p class="title">{{ p.title }}</p>
+              <p class="meta">{{ p.summary }}</p>
+            </a>
           {% endif %}
-        </a>
-      {% endfor %}
-    </div>
-  </section>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
 
-  <footer class="wrap footer--muted">
-    © {{ site.time | date: "%Y" }} {{ site.author.name | default: "Ayano Yokoyama" }}
+  <footer class="footer--muted">
+    © {{ "now" | date: "%Y" }} Ayano Yokoyama
   </footer>
 </body>
 </html>
