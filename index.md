@@ -7,7 +7,7 @@ has_gradient: true
 <section class="hero-center">
   <h1 class="hero-name">Ayano Yokoyama</h1>
   <p class="hero-tagline">
-    Content Design & Localization — writing and designing digital experiences with the support of AI
+    Content Design & Localization - Designing clear and human-centered content with AI and localization
   </p>
 
   <a href="#work" class="scroll-indicator">
