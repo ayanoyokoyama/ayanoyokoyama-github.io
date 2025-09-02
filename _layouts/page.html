@@ -35,28 +35,34 @@
     {{ content }}
   </main>
 
-  <!-- Auto “More work” grid on project pages only (no prev/next) -->
-  {% assign is_project = page.url contains '/projects/' %}
-  {% if is_project %}
+  {%- comment -%}
+    Show “More work” only on project pages.
+    Extra safety:
+      • Explicitly exclude /about/ (sometimes caches can bite)
+      • Allow page-level opt-out via: no_more_work: true
+  {%- endcomment -%}
+  {%- assign url_head = page.url | slice: 0, 10 -%}
+  {%- assign is_project = url_head == '/projects/' -%}
+  {%- assign is_about = page.url == '/about/' or page.url == '/about/index.html' -%}
+
+  {%- if is_project and is_about == false and page.no_more_work != true -%}
     <section class="more-work wrap" style="margin-top:28px">
       <h3>More work</h3>
       <div class="work-grid">
-        {% comment %}
-          Collect all project pages, sort by `order`, and skip the current page.
-          Make sure each project page has `order:` and `summary:` in its front matter.
-        {% endcomment %}
-        {% assign cards = site.pages | where_exp: 'p', 'p.url contains "/projects/"' | sort: 'order' %}
-        {% for p in cards %}
-          {% if p.url != page.url %}
+        {%- assign cards = site.pages
+            | where_exp: 'p', 'p.url contains "/projects/"'
+            | sort: 'order' -%}
+        {%- for p in cards -%}
+          {%- if p.url != page.url -%}
             <a class="work-card {% cycle 'card-teal','card-yellow','card-lilac' %}" href="{{ p.url }}">
               <p class="title">{{ p.title }}</p>
               <p class="meta">{{ p.summary }}</p>
             </a>
-          {% endif %}
-        {% endfor %}
+          {%- endif -%}
+        {%- endfor -%}
       </div>
     </section>
-  {% endif %}
+  {%- endif -%}
 
   <footer class="footer--muted">
     © {{ "now" | date: "%Y" }} Ayano Yokoyama
