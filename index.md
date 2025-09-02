@@ -1,39 +1,36 @@
 ---
-layout: home
+layout: default
 title: Home
 ---
 
-<!-- Projects list -->
-<ul class="projects-stack" id="projects">
+<section class="hero">
+  <div>
+    <h1>Hello, I’m <span class="gradient">Ayano</span></h1>
+    <p class="lead">UX writing · Content design · Localization · AI-assisted workflows</p>
+    <p style="margin-top:18px;">
+      <a class="btn" href="/about/">About me</a>
+      <a style="margin-left:10px" href="/contact/">Contact</a>
+    </p>
+  </div>
+  <!-- optional hero image; you can remove this <img> -->
+  <div></div>
+</section>
 
-  <li class="item">
-    <a class="title" href="/projects/naia/">Naia — AI-assisted fitness app</a>
-    <p class="desc">
-      Onboarding microcopy, help-center IA, tone & voice, and research-informed iterations.
-    </p>
-    <p class="meta">
-      <strong>Role:</strong> Content Designer · <strong>Areas:</strong> UX Writing, IA, Voice & Tone
-    </p>
-  </li>
+<a id="work"></a>
+<h2>Selected work</h2>
 
-  <li class="item">
-    <a class="title" href="/projects/easyb/">EasyB — Banking made simple</a>
-    <p class="desc">
-      Redesigned onboarding flow with anxiety-reducing microcopy and clearer error states.
-    </p>
-    <p class="meta">
-      <strong>Role:</strong> UX Writer · <strong>Areas:</strong> Onboarding, Error States, Tone
-    </p>
-  </li>
-
-  <li class="item">
-    <a class="title" href="/projects/guerillabox/">GuerillaBox — Logistics marketplace</a>
-    <p class="desc">
-      IA, help center content patterns, and writing system for support flows.
-    </p>
-    <p class="meta">
-      <strong>Role:</strong> Content Designer · <strong>Areas:</strong> IA, Help Center, Patterns
-    </p>
-  </li>
-
-</ul>
+<div class="card-grid">
+{% for p in site.data.projects %}
+  <a class="card" href="{{ p.url | relative_url }}">
+    <img src="{{ p.cover | relative_url }}" alt="">
+    <div class="meta">
+      <div class="kicker">{{ p.kicker }}</div>
+      <h3 style="margin:.2rem 0 0">{{ p.title }}</h3>
+      <p style="margin:.4rem 0 0; color:#555">{{ p.blurb }}</p>
+      <div style="margin-top:8px">
+        {% for t in p.tags %}<span class="badge">{{ t }}</span>{% endfor %}
+      </div>
+    </div>
+  </a>
+{% endfor %}
+</div>
