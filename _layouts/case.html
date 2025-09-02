@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<article>
+  <div class="case-hero">
+    <div class="kicker">{{ page.kicker }}</div>
+    <h1 class="case-title">{{ page.title }}</h1>
+    <div class="case-meta">
+      {% for t in page.tags %}<span class="badge">{{ t }}</span>{% endfor %}
+    </div>
+    <p>{{ page.subtitle }}</p>
+  </div>
+
+  {% if page.hero_images == "scroll" %}
+  <div class="scroll-x">
+    {% for img in page.images %}<img src="{{ img | relative_url }}" alt="">{% endfor %}
+  </div>
+  {% else %}
+  <div class="gallery">
+    {% for img in page.images %}<img src="{{ img | relative_url }}" alt="">{% endfor %}
+  </div>
+  {% endif %}
+
+  <div class="section">
+    {{ content }}
+  </div>
+
+  <p class="section"><a class="btn" href="/#work">Back to work</a></p>
+</article>
