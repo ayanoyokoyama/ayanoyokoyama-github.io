@@ -33,3 +33,66 @@ a:hover{text-decoration:underline}
 .kicker{color:var(--accent);font-weight:600;letter-spacing:.3px;text-transform:uppercase;font-size:12px}
 .btn{display:inline-block;background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px}
 @media (max-width:900px){ .hero{grid-template-columns:1fr} }
+/* ===== header brand (AY) ===== */
+.brand-logo{
+  display:inline-grid; place-items:center;
+  width:28px; height:28px; border-radius:6px;
+  font-weight:700; font-size:12px; letter-spacing:.02em;
+  text-decoration:none; color:#fff;
+  background:#111; /* simple mark; replace with an SVG later if you want */
+}
+.brand-logo:hover{opacity:.9}
+
+/* ===== page-wide gradient for hero pages ===== */
+.has-gradient{
+  /* soft sky→peach glassy gradient */
+  background:
+    radial-gradient(1200px 700px at 15% -8%, #eaf1ff 0%, transparent 55%),
+    radial-gradient(1200px 700px at 90% -12%, #ffe9f7 0%, transparent 55%),
+    linear-gradient(180deg, #e8f3ff 0%, #fff2ea 100%);
+}
+
+/* ===== centered hero (name + summary) ===== */
+.hero-center{
+  min-height: calc(100vh - 64px); /* account for fixed header */
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:left; /* like lola's, left-aligned block */
+  position:relative;
+}
+.hero-center > *{max-width: 42ch}
+
+.hero-name{
+  font-size:56px; line-height:1.1; margin:0 0 8px;
+  font-family: var(--font);
+  font-weight:700;
+}
+
+.hero-tagline{
+  margin: 0 0 22px;
+  color: var(--ink);
+  font-size:18px; line-height:1.55;
+  border-left: 3px solid rgba(0,0,0,.18); /* subtle vertical rule like the ref */
+  padding-left:12px;
+  opacity:.9;
+}
+
+/* poppy gradients for accents (use on spans if you want color) */
+.grad-poppy{
+  background: linear-gradient(90deg,#ff6a6a 0%, #a46aff 50%, #3c74ff 100%);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+}
+
+/* scroll cue */
+.scroll-indicator{
+  margin-top:18px; display:inline-flex; flex-direction:column; align-items:center;
+  gap:8px; color:var(--muted); text-decoration:none; font-size:12px; letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.scroll-indicator .chev{ width:28px; height:28px }
+.scroll-indicator:hover{ color:var(--ink) }
+
+/* responsive */
+@media (max-width:640px){
+  .hero-name{font-size:40px}
+  .hero-tagline{font-size:16px}
+}
