@@ -1,23 +1,19 @@
-header_pages:
-  - about.md
-
 title: Ayano Yokoyama
 shortname: AY
-description: UX writing, content design, and AI-assisted workflows.
-theme: minima
-minima:
-  skin: auto
+description: I design and localize digital content, combining UX writing and design with AI-assisted workflows.
+url: https://ayanoyokoyama.github.io
 
 author: Ayano Yokoyama
 email: ayanoyokoyama@yahoo.com
 linkedin: https://www.linkedin.com/in/ayanoyokoyama
 
+markdown: kramdown
+permalink: pretty
+
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
-url: https://ayanoyokoyama.github.io
-defaults:
-  - scope: { path: "" }
-    values: { layout: page }
-
+collections:
+  posts:
+    output: true
