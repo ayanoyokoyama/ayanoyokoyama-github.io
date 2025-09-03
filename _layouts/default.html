@@ -7,22 +7,29 @@
 </head>
 <body class="{% if page.has_gradient %}has-gradient{% endif %}">
   <header class="topbar">
-  <div class="wrap topbar-inner">
+  <div class="wrap">
     <a class="brand-link" href="{{ '/' | relative_url }}">AY</a>
 
     <nav class="topnav" aria-label="Primary">
-      <a href="{{ '/about/' | relative_url }}"
-         class="{% if page.url == '/about/' %}is-active{% endif %}">About</a>
+      <a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}aria-current="page"{% endif %}>About</a>
 
-      <a href="{% if page.url == '/' %}#work{% else %}{{ '/' | relative_url }}#work{% endif %}">
-        Work
-      </a>
+      <details class="work-menu">
+        <summary>
+          Work
+          <svg class="caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        </summary>
+        <ul>
+          <li><a href="{{ '/projects/naia/'        | relative_url }}">Naia — AI-assisted fitness app</a></li>
+          <li><a href="{{ '/projects/easyb/'       | relative_url }}">EasyB — Banking made simple</a></li>
+          <li><a href="{{ '/projects/guerillabox/' | relative_url }}">GuerillaBox — Mobile UX</a></li>
+        </ul>
+      </details>
 
-      <a href="{{ '/contact/' | relative_url }}"
-         class="{% if page.url == '/contact/' %}is-active{% endif %}">Contact</a>
+      <a href="{{ '/contact/' | relative_url }}" {% if page.url == '/contact/' %}aria-current="page"{% endif %}>Contact</a>
     </nav>
   </div>
 </header>
+
 
 
   <main class="wrap">
