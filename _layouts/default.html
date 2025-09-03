@@ -8,13 +8,16 @@
 <body class="{% if page.has_gradient %}has-gradient{% endif %}">
   <header class="topbar">
     <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;">
-      <!-- Brand logo on the left -->
+      <!-- Left: AY -->
       <a class="brand-logo" href="/" aria-label="AY home">AY</a>
-      <!-- Navigation links on the right -->
+
+      <!-- Right: WORK / ABOUT / CONTACT -->
+      {% assign on_home = page.url == '/' %}
+      {% assign on_work = page.url contains '/work/' %}
       <nav class="topnav">
-        <a href="/about/">About</a>
-        <a href="/#work">Work</a>
-        <a href="/contact/">Contact</a>
+        <a href="/#work" {% if on_home or on_work %}class="active" aria-current="page"{% endif %}>Work</a>
+        <a href="/about/" {% if page.url == '/about/' %}class="active" aria-current="page"{% endif %}>About</a>
+        <a href="/contact/" {% if page.url == '/contact/' %}class="active" aria-current="page"{% endif %}>Contact</a>
       </nav>
     </div>
   </header>
@@ -23,8 +26,6 @@
     {{ content }}
   </main>
 
-  <footer class="wrap footer--muted">
-    © {{ "now" | date: "%Y" }} Ayano Yokoyama
-  </footer>
+  <footer class="wrap footer--muted">© {{ "now" | date: "%Y" }} Ayano Yokoyama</footer>
 </body>
 </html>
