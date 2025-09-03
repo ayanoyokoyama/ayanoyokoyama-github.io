@@ -48,6 +48,7 @@ body{
 /* make the inner container flex so brand and nav sit on one line */
 .topbar .wrap{
   height:64px;
+   display:flex !important; 
   display:flex; align-items:center; justify-content:space-between;
 }
 .brand-link{
