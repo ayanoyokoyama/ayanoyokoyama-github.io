@@ -7,20 +7,23 @@
 </head>
 <body class="{% if page.has_gradient %}has-gradient{% endif %}">
   <header class="topbar">
-    <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;">
-      <!-- Left: AY -->
-      <a class="brand-logo" href="/" aria-label="AY home">AY</a>
+  <div class="wrap topbar-inner">
+    <a class="brand-link" href="{{ '/' | relative_url }}">AY</a>
 
-      <!-- Right: WORK / ABOUT / CONTACT -->
-      {% assign on_home = page.url == '/' %}
-      {% assign on_work = page.url contains '/work/' %}
-      <nav class="topnav">
-        <a href="/#work" {% if on_home or on_work %}class="active" aria-current="page"{% endif %}>Work</a>
-        <a href="/about/" {% if page.url == '/about/' %}class="active" aria-current="page"{% endif %}>About</a>
-        <a href="/contact/" {% if page.url == '/contact/' %}class="active" aria-current="page"{% endif %}>Contact</a>
-      </nav>
-    </div>
-  </header>
+    <nav class="topnav" aria-label="Primary">
+      <a href="{{ '/about/' | relative_url }}"
+         class="{% if page.url == '/about/' %}is-active{% endif %}">About</a>
+
+      <a href="{% if page.url == '/' %}#work{% else %}{{ '/' | relative_url }}#work{% endif %}">
+        Work
+      </a>
+
+      <a href="{{ '/contact/' | relative_url }}"
+         class="{% if page.url == '/contact/' %}is-active{% endif %}">Contact</a>
+    </nav>
+  </div>
+</header>
+
 
   <main class="wrap">
     {{ content }}
