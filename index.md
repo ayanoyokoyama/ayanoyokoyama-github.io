@@ -20,22 +20,28 @@ has_gradient: true
 
 <!-- anchor target for the top nav and scroll link -->
 <a id="work"></a>
-<h2>Selected work</h2>
 
-<div class="card-grid">
-{% for p in site.data.projects %}
-  <a class="card" href="{{ p.url | relative_url }}">
-    {% if p.cover %}<img src="{{ p.cover | relative_url }}" alt="">{% endif %}
-    <div class="meta">
-      {% if p.kicker %}<div class="kicker">{{ p.kicker }}</div>{% endif %}
-      <h3 style="margin:.2rem 0 0">{{ p.title }}</h3>
-      {% if p.blurb %}<p style="margin:.4rem 0 0; color:#555">{{ p.blurb }}</p>{% endif %}
-      {% if p.tags %}
-      <div style="margin-top:8px">
-        {% for t in p.tags %}<span class="badge">{{ t }}</span>{% endfor %}
-      </div>
+<section class="wrap work-section">
+  <h2 class="work-heading">Selected work</h2>
+
+  <div class="work-grid">
+  {% for p in site.data.projects %}
+    <a class="work-card" href="{{ p.url | relative_url }}">
+      {% if p.cover %}
+        <img class="work-cover" src="{{ p.cover | relative_url }}" alt="">
       {% endif %}
-    </div>
-  </a>
-{% endfor %}
-</div>
+      <div class="meta">
+        {% if p.kicker %}<div class="title">{{ p.kicker }}</div>{% endif %}
+        <h3 class="work-title">{{ p.title }}</h3>
+        {% if p.blurb %}<p class="meta">{{ p.blurb }}</p>{% endif %}
+
+        {% if p.tags %}
+        <div style="margin-top:8px">
+          {% for t in p.tags %}<span class="badge">{{ t }}</span>{% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </a>
+  {% endfor %}
+  </div>
+</section>
