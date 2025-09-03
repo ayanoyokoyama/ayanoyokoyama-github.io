@@ -16,18 +16,6 @@ has_gradient: true
   </a>
 </section>
 
-<a id="work"></a>
-<div class="projects-stack">
-  {% for p in site.data.projects %}
-  <div class="item">
-    <a class="title" href="{{ p.url | relative_url }}">{{ p.title }}</a>
-    <p class="desc">{{ p.blurb }}</p>
-    <p class="meta">{{ p.kicker }}{% if p.tags %} · {{ p.tags | join: ", " }}{% endif %}</p>
-    <img class="thumb" src="{{ p.cover | relative_url }}" alt="">
-  </div>
-  {% endfor %}
-</div>
-
 <h2>Selected work</h2>
 
 <div class="card-grid">
